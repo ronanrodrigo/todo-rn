@@ -18,7 +18,7 @@ export default class App extends React.Component<{}, AppState> {
       const currentTaskItems = this.state.taskItems
       this.setState({ taskItems: currentTaskItems.concat(task) })
     }
-    const renderItem = (task: Task) => { return <TaskListItem key={task.key} name={task.name} completed={task.completed} /> }
+    const renderItem = (task: Task) => { return <TaskListItem task={task} /> }
 
     return (
       <View style={styles.container}>
