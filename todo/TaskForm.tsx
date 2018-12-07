@@ -25,7 +25,7 @@ export class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
         return (
             <View>
                 <TextInput
-                    style={styles.form}
+                    style={styles.textInput}
                     onChangeText={(text) => this.setState({ name: text })}
                     value={this.state.name} />
                 <Switch value={this.state.completed} onValueChange={(value) => this.setState({ completed: value })} />
@@ -37,7 +37,7 @@ export class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
 }
 
 const styles = StyleSheet.create({
-    form: {
+    textInput: {
         height: 40,
         width: 200,
         padding: 10,
