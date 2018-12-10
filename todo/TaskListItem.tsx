@@ -23,7 +23,7 @@ export class TaskListItem extends React.Component<TaskListItemProps, TaskListIte
         return (
             <View>
                 <Text>{this.props.task.name}
-                    <Switch value={this.state.completed} onValueChange={this.toggleCompleted}></Switch>
+                    <Switch value={this.state.completed} onValueChange={this.toggleCompleted} />
                 </Text>
             </View>
         )

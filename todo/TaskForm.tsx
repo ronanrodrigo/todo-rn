@@ -30,7 +30,7 @@ export class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
                     onChangeText={text => this.setState({ name: text })}
                     value={this.state.name} />
                 <Switch value={this.state.completed} onValueChange={value => this.setState({ completed: value })} />
-                <Button title="Cadastrar" onPress={this.submit}></Button>
+                <Button title="Cadastrar" onPress={this.submit} />
             </View>
         )
     }
