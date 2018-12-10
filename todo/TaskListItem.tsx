@@ -1,6 +1,6 @@
-import { Task } from "./Task";
-import { View, Switch, Text, AppState } from "react-native";
-import React from "react";
+import { Task } from "./Task"
+import { View, Switch, Text, AppState } from "react-native"
+import React from "react"
 
 type TaskListItemProps = {
     task: Task

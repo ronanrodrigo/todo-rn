@@ -1,5 +1,5 @@
-import { View, TextInput, Button, StyleSheet, Switch } from "react-native";
-import React from "react";
+import { View, TextInput, Button, StyleSheet, Switch } from "react-native"
+import React from "react"
 
 type TaskFormProps = {
     onSubmit: (Task) => void

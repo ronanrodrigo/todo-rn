@@ -1,8 +1,8 @@
-import React from 'react';
-import { StyleSheet, Text, View, FlatList, Switch, TextInput, Button } from 'react-native';
-import { TaskForm } from './todo/TaskForm';
-import { Task } from './todo/Task';
-import { TaskListItem } from './todo/TaskListItem';
+import React from 'react'
+import { StyleSheet, Text, View, FlatList, Switch, TextInput, Button } from 'react-native'
+import { TaskForm } from './todo/TaskForm'
+import { Task } from './todo/Task'
+import { TaskListItem } from './todo/TaskListItem'
 
 type AppState = {
   taskItems: Array<Task>
@@ -27,7 +27,7 @@ export default class App extends React.Component<{}, AppState> {
         <Text>{this.state.taskItems.length}</Text>
         <FlatList data={this.state.taskItems} renderItem={({ item }) => { return this.renderItem(item) }} />
       </View>
-    );
+    )
   }
 }
 
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   }
-});
+})
