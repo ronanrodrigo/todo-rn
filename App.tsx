@@ -9,22 +9,23 @@ type AppState = {
 }
 
 export default class App extends React.Component<{}, AppState> {
+
+  private readonly addItem = (task: Task) => {
+    const currentTaskItems = this.state.taskItems
+    this.setState({ taskItems: currentTaskItems.concat(task) })
+  }
+  private readonly renderItem = task => { return <TaskListItem task={task} /> }
+
   constructor(props) {
     super(props)
     this.state = { taskItems: [] }
   }
   render() {
-    const addItem = (task: Task) => {
-      const currentTaskItems = this.state.taskItems
-      this.setState({ taskItems: currentTaskItems.concat(task) })
-    }
-    const renderItem = (task: Task) => { return <TaskListItem task={task} /> }
-
     return (
       <View style={styles.container}>
-        <TaskForm onSubmit={addItem} />
+        <TaskForm onSubmit={this.addItem} />
         <Text>{this.state.taskItems.length}</Text>
-        <FlatList data={this.state.taskItems} renderItem={({ item }) => { return renderItem(item) }} />
+        <FlatList data={this.state.taskItems} renderItem={({ item }) => { return this.renderItem(item) }} />
       </View>
     );
   }

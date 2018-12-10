@@ -11,17 +11,19 @@ type TaskListItemState = {
 }
 
 export class TaskListItem extends React.Component<TaskListItemProps, TaskListItemState> {
+
+    private readonly toggleCompleted = value => this.setState({ completed: value })
+
     constructor(props) {
         super(props)
         this.state = { completed: this.props.task.completed }
     }
 
     render() {
-        const toggleCompleted = (value) => this.setState({ completed: value })
         return (
             <View>
                 <Text>{this.props.task.name}
-                    <Switch value={this.state.completed} onValueChange={toggleCompleted}></Switch>
+                    <Switch value={this.state.completed} onValueChange={this.toggleCompleted}></Switch>
                 </Text>
             </View >
         )

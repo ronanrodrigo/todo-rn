@@ -12,24 +12,25 @@ type TaskFormState = {
 
 export class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
 
+    private submit = () => {
+        this.props.onSubmit({ key: Date.now().toString(), name: this.state.name, completed: this.state.completed })
+        this.setState({ name: '', completed: false })
+    }
+
     constructor(props) {
         super(props)
         this.state = { name: '', completed: false }
     }
 
     render() {
-        const submit = () => {
-            this.props.onSubmit({ key: Date.now().toString(), name: this.state.name, completed: this.state.completed })
-            this.setState({ name: '', completed: false })
-        }
         return (
             <View>
                 <TextInput
                     style={styles.textInput}
-                    onChangeText={(text) => this.setState({ name: text })}
+                    onChangeText={text => this.setState({ name: text })}
                     value={this.state.name} />
-                <Switch value={this.state.completed} onValueChange={(value) => this.setState({ completed: value })} />
-                <Button title="Cadastrar" onPress={submit}></Button>
+                <Switch value={this.state.completed} onValueChange={value => this.setState({ completed: value })} />
+                <Button title="Cadastrar" onPress={this.submit}></Button>
             </View >
         )
     }
