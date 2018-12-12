@@ -11,6 +11,7 @@ export default class App extends React.Component<{}, IAppState> {
     super(props);
     this.state = { taskItems: [] };
   }
+
   public render() {
     return (
       <View style={styles.container}>
@@ -25,6 +26,7 @@ export default class App extends React.Component<{}, IAppState> {
     const currentTaskItems = this.state.taskItems;
     this.setState({ taskItems: currentTaskItems.concat(task) });
   }
+
   private readonly renderItem = (task) => <ListItem task={task} />;
 }
 
